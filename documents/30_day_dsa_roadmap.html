@@ -1,0 +1,320 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); }
+.container { padding: 1.5rem 0; }
+.phase-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.tab { padding: 8px 16px; border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-secondary); font-size: 13px; font-weight: 500; cursor: pointer; background: var(--color-background-primary); color: var(--color-text-secondary); transition: all 0.15s; }
+.tab.active { background: #EEEDFE; color: #3C3489; border-color: #AFA9EC; }
+.tab:hover:not(.active) { background: var(--color-background-secondary); }
+.phase-content { display: none; }
+.phase-content.active { display: block; }
+.phase-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 1.25rem; padding: 1rem 1.25rem; background: var(--color-background-secondary); border-radius: var(--border-radius-lg); }
+.phase-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.phase-meta h2 { font-size: 16px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+.phase-meta p { font-size: 13px; color: var(--color-text-secondary); line-height: 1.5; }
+.topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-bottom: 1.25rem; }
+.topic-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; }
+.topic-card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.pattern-badge { font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: 20px; }
+.topic-title { font-size: 14px; font-weight: 500; color: var(--color-text-primary); }
+.q-list { list-style: none; }
+.q-item { display: flex; align-items: flex-start; gap: 8px; padding: 5px 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.q-item:last-child { border-bottom: none; }
+.q-diff { font-size: 11px; font-weight: 500; padding: 2px 6px; border-radius: 4px; flex-shrink: 0; margin-top: 1px; }
+.easy { background: #EAF3DE; color: #3B6D11; }
+.med { background: #FAEEDA; color: #854F0B; }
+.hard { background: #FCEBEB; color: #A32D2D; }
+.q-name { font-size: 13px; color: var(--color-text-primary); line-height: 1.4; }
+.q-pattern { font-size: 11px; color: var(--color-text-secondary); margin-top: 1px; }
+.tip-box { background: #E1F5EE; border: 0.5px solid #5DCAA5; border-radius: var(--border-radius-md); padding: 0.875rem 1rem; margin-top: 0.75rem; }
+.tip-box p { font-size: 13px; color: #0F6E56; line-height: 1.5; }
+.tip-label { font-size: 11px; font-weight: 500; color: #0F6E56; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+.progress-bar { display: flex; height: 6px; border-radius: 3px; overflow: hidden; margin-bottom: 1.5rem; gap: 3px; }
+.seg { border-radius: 3px; }
+</style>
+
+<div class="container">
+  <h2 class="sr-only">30-day DSA preparation roadmap organized by phases with pattern-focused questions</h2>
+
+  <div class="progress-bar">
+    <div class="seg" style="width:30%; background:#7F77DD;"></div>
+    <div class="seg" style="width:27%; background:#1D9E75;"></div>
+    <div class="seg" style="width:23%; background:#EF9F27;"></div>
+    <div class="seg" style="width:20%; background:#D85A30;"></div>
+  </div>
+
+  <div class="phase-tabs">
+    <button class="tab active" onclick="show('p1',this)">Phase 1 · Days 1–9</button>
+    <button class="tab" onclick="show('p2',this)">Phase 2 · Days 10–18</button>
+    <button class="tab" onclick="show('p3',this)">Phase 3 · Days 19–24</button>
+    <button class="tab" onclick="show('p4',this)">Phase 4 · Days 25–30</button>
+  </div>
+
+  <div id="p1" class="phase-content active">
+    <div class="phase-header">
+      <div class="phase-icon" style="background:#EEEDFE;">🧱</div>
+      <div class="phase-meta">
+        <h2>Foundation patterns</h2>
+        <p>Arrays, strings, hashing, and the two most powerful sliding patterns. These appear in 60%+ of all interview questions. Build reflexes here first.</p>
+      </div>
+    </div>
+    <div class="topics-grid">
+      <div class="topic-card">
+        <div class="topic-card-header">
+          <span class="pattern-badge" style="background:#EEEDFE; color:#3C3489;">Two Pointers</span>
+        </div>
+        <div class="topic-title" style="margin-bottom:10px;">Days 1–2</div>
+        <ul class="q-list">
+          <li class="q-item"><span class="q-diff easy">E</span><div><div class="q-name">Valid Palindrome</div><div class="q-pattern">Pattern: inward shrink</div></div></li>
+          <li class="q-item"><span class="q-diff easy">E</span><div><div class="q-name">Two Sum II (sorted)</div><div class="q-pattern">Pattern: target sum</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">3Sum</div><div class="q-pattern">Pattern: fix + two-ptr</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Container With Most Water</div><div class="q-pattern">Pattern: max area shrink</div></div></li>
+          <li class="q-item"><span class="q-diff hard">H</span><div><div class="q-name">Trapping Rain Water</div><div class="q-pattern">Pattern: left/right max array</div></div></li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-card-header">
+          <span class="pattern-badge" style="background:#E1F5EE; color:#0F6E56;">Sliding Window</span>
+        </div>
+        <div class="topic-title" style="margin-bottom:10px;">Days 3–4</div>
+        <ul class="q-list">
+          <li class="q-item"><span class="q-diff easy">E</span><div><div class="q-name">Max Avg Subarray I</div><div class="q-pattern">Pattern: fixed window</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Longest Substring Without Repeat</div><div class="q-pattern">Pattern: dynamic window + set</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Minimum Size Subarray Sum</div><div class="q-pattern">Pattern: shrink on condition</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Permutation in String</div><div class="q-pattern">Pattern: char freq map</div></div></li>
+          <li class="q-item"><span class="q-diff hard">H</span><div><div class="q-name">Minimum Window Substring</div><div class="q-pattern">Pattern: have/need tracking</div></div></li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-card-header">
+          <span class="pattern-badge" style="background:#FAEEDA; color:#854F0B;">Hashing</span>
+        </div>
+        <div class="topic-title" style="margin-bottom:10px;">Days 5–6</div>
+        <ul class="q-list">
+          <li class="q-item"><span class="q-diff easy">E</span><div><div class="q-name">Two Sum</div><div class="q-pattern">Pattern: complement lookup</div></div></li>
+          <li class="q-item"><span class="q-diff easy">E</span><div><div class="q-name">Contains Duplicate</div><div class="q-pattern">Pattern: seen set</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Group Anagrams</div><div class="q-pattern">Pattern: sorted key grouping</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Longest Consecutive Sequence</div><div class="q-pattern">Pattern: set + start-of-seq check</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Subarray Sum Equals K</div><div class="q-pattern">Pattern: prefix sum + freq map</div></div></li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-card-header">
+          <span class="pattern-badge" style="background:#FCEBEB; color:#A32D2D;">Prefix Sum / Binary Search</span>
+        </div>
+        <div class="topic-title" style="margin-bottom:10px;">Days 7–9</div>
+        <ul class="q-list">
+          <li class="q-item"><span class="q-diff easy">E</span><div><div class="q-name">Running Sum of 1D Array</div><div class="q-pattern">Pattern: prefix build</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Binary Search</div><div class="q-pattern">Pattern: lo/hi/mid template</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Find Min in Rotated Array</div><div class="q-pattern">Pattern: pivot detection</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Search in Rotated Array</div><div class="q-pattern">Pattern: sorted half check</div></div></li>
+          <li class="q-item"><span class="q-diff hard">H</span><div><div class="q-name">Median of Two Sorted Arrays</div><div class="q-pattern">Pattern: binary search on partition</div></div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-label">Phase tip</div>
+      <p>Before coding any question, write down the pattern name at the top. "This is a dynamic sliding window — expand right, shrink left when condition breaks." This habit is what separates pattern thinkers from brute-forcers.</p>
+    </div>
+  </div>
+
+  <div id="p2" class="phase-content">
+    <div class="phase-header">
+      <div class="phase-icon" style="background:#E1F5EE;">🌲</div>
+      <div class="phase-meta">
+        <h2>Trees, graphs & stack patterns</h2>
+        <p>The real interview meat. Master DFS/BFS as unified templates, not separate tricks. Stack patterns decode 80% of parenthesis and monotonic problems instantly.</p>
+      </div>
+    </div>
+    <div class="topics-grid">
+      <div class="topic-card">
+        <div class="topic-card-header">
+          <span class="pattern-badge" style="background:#EEEDFE; color:#3C3489;">Stack / Monotonic Stack</span>
+        </div>
+        <div class="topic-title" style="margin-bottom:10px;">Days 10–11</div>
+        <ul class="q-list">
+          <li class="q-item"><span class="q-diff easy">E</span><div><div class="q-name">Valid Parentheses</div><div class="q-pattern">Pattern: push/pop matching</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Min Stack</div><div class="q-pattern">Pattern: parallel min tracking</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Daily Temperatures</div><div class="q-pattern">Pattern: mono decreasing stack</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Next Greater Element I</div><div class="q-pattern">Pattern: mono stack + map</div></div></li>
+          <li class="q-item"><span class="q-diff hard">H</span><div><div class="q-name">Largest Rectangle in Histogram</div><div class="q-pattern">Pattern: mono stack + area calc</div></div></li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-card-header">
+          <span class="pattern-badge" style="background:#E1F5EE; color:#0F6E56;">Binary Tree DFS/BFS</span>
+        </div>
+        <div class="topic-title" style="margin-bottom:10px;">Days 12–14</div>
+        <ul class="q-list">
+          <li class="q-item"><span class="q-diff easy">E</span><div><div class="q-name">Invert Binary Tree</div><div class="q-pattern">Pattern: post-order DFS</div></div></li>
+          <li class="q-item"><span class="q-diff easy">E</span><div><div class="q-name">Maximum Depth of Binary Tree</div><div class="q-pattern">Pattern: DFS height</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Level Order Traversal</div><div class="q-pattern">Pattern: BFS with deque</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Lowest Common Ancestor</div><div class="q-pattern">Pattern: recursive LCA</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Binary Tree Right Side View</div><div class="q-pattern">Pattern: BFS last-in-level</div></div></li>
+          <li class="q-item"><span class="q-diff hard">H</span><div><div class="q-name">Binary Tree Max Path Sum</div><div class="q-pattern">Pattern: DFS with global max</div></div></li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-card-header">
+          <span class="pattern-badge" style="background:#FAEEDA; color:#854F0B;">Graph DFS/BFS</span>
+        </div>
+        <div class="topic-title" style="margin-bottom:10px;">Days 15–17</div>
+        <ul class="q-list">
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Number of Islands</div><div class="q-pattern">Pattern: DFS grid flood-fill</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Clone Graph</div><div class="q-pattern">Pattern: BFS + visited map</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Course Schedule</div><div class="q-pattern">Pattern: cycle detect (topo)</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Rotting Oranges</div><div class="q-pattern">Pattern: multi-source BFS</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Pacific Atlantic Water Flow</div><div class="q-pattern">Pattern: reverse BFS from edges</div></div></li>
+          <li class="q-item"><span class="q-diff hard">H</span><div><div class="q-name">Word Ladder</div><div class="q-pattern">Pattern: BFS shortest path</div></div></li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-card-header">
+          <span class="pattern-badge" style="background:#FCEBEB; color:#A32D2D;">BST + Heap</span>
+        </div>
+        <div class="topic-title" style="margin-bottom:10px;">Day 18</div>
+        <ul class="q-list">
+          <li class="q-item"><span class="q-diff easy">E</span><div><div class="q-name">Kth Largest in Stream</div><div class="q-pattern">Pattern: min-heap of size k</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Kth Largest in Array</div><div class="q-pattern">Pattern: quickselect / heap</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Top K Frequent Elements</div><div class="q-pattern">Pattern: bucket sort / heap</div></div></li>
+          <li class="q-item"><span class="q-diff hard">H</span><div><div class="q-name">Find Median from Data Stream</div><div class="q-pattern">Pattern: two heaps (max+min)</div></div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-label">Phase tip</div>
+      <p>Memorize one DFS template and one BFS template. Every graph/tree problem is a variation. Write your templates from memory before starting each session.</p>
+    </div>
+  </div>
+
+  <div id="p3" class="phase-content">
+    <div class="phase-header">
+      <div class="phase-icon" style="background:#FAEEDA;">⚡</div>
+      <div class="phase-meta">
+        <h2>Dynamic programming patterns</h2>
+        <p>DP is just "memoized recursion." Learn the 5 patterns and you can crack 90% of DP questions. Never memorize solutions — memorize the decision framework.</p>
+      </div>
+    </div>
+    <div class="topics-grid">
+      <div class="topic-card">
+        <div class="topic-card-header">
+          <span class="pattern-badge" style="background:#EEEDFE; color:#3C3489;">1D DP</span>
+        </div>
+        <div class="topic-title" style="margin-bottom:10px;">Days 19–20</div>
+        <ul class="q-list">
+          <li class="q-item"><span class="q-diff easy">E</span><div><div class="q-name">Climbing Stairs</div><div class="q-pattern">Pattern: dp[i] = dp[i-1]+dp[i-2]</div></div></li>
+          <li class="q-item"><span class="q-diff easy">E</span><div><div class="q-name">House Robber</div><div class="q-pattern">Pattern: skip or take</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Longest Increasing Subsequence</div><div class="q-pattern">Pattern: patience sort / dp</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Word Break</div><div class="q-pattern">Pattern: dp[i] = any valid split</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Coin Change</div><div class="q-pattern">Pattern: unbounded knapsack</div></div></li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-card-header">
+          <span class="pattern-badge" style="background:#E1F5EE; color:#0F6E56;">2D DP</span>
+        </div>
+        <div class="topic-title" style="margin-bottom:10px;">Days 21–22</div>
+        <ul class="q-list">
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Unique Paths</div><div class="q-pattern">Pattern: grid DP (down+right)</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Longest Common Subsequence</div><div class="q-pattern">Pattern: match or skip dp[i][j]</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Edit Distance</div><div class="q-pattern">Pattern: 3-way choice at each cell</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">0/1 Knapsack</div><div class="q-pattern">Pattern: include/exclude item</div></div></li>
+          <li class="q-item"><span class="q-diff hard">H</span><div><div class="q-name">Burst Balloons</div><div class="q-pattern">Pattern: interval DP (last burst)</div></div></li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-card-header">
+          <span class="pattern-badge" style="background:#FAEEDA; color:#854F0B;">Backtracking</span>
+        </div>
+        <div class="topic-title" style="margin-bottom:10px;">Days 23–24</div>
+        <ul class="q-list">
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Subsets</div><div class="q-pattern">Pattern: include/exclude DFS</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Combination Sum</div><div class="q-pattern">Pattern: reuse + pruning</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Permutations</div><div class="q-pattern">Pattern: swap-based backtrack</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Palindrome Partitioning</div><div class="q-pattern">Pattern: DFS + palindrome check</div></div></li>
+          <li class="q-item"><span class="q-diff hard">H</span><div><div class="q-name">N-Queens</div><div class="q-pattern">Pattern: constraint propagation</div></div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-label">Phase tip</div>
+      <p>DP decision tree: Can I break this into overlapping subproblems? Yes → DP. Does the subproblem have one variable (index)? 1D. Two? 2D. Draw the recurrence before writing code.</p>
+    </div>
+  </div>
+
+  <div id="p4" class="phase-content">
+    <div class="phase-header">
+      <div class="phase-icon" style="background:#FAECE7;">🏆</div>
+      <div class="phase-meta">
+        <h2>Advanced patterns + mock interviews</h2>
+        <p>Linked lists, tries, union-find, and intervals round out the blind spots. Then shift to timed mock sessions — speed and communication matter as much as correctness.</p>
+      </div>
+    </div>
+    <div class="topics-grid">
+      <div class="topic-card">
+        <div class="topic-card-header">
+          <span class="pattern-badge" style="background:#EEEDFE; color:#3C3489;">Linked List</span>
+        </div>
+        <div class="topic-title" style="margin-bottom:10px;">Days 25–26</div>
+        <ul class="q-list">
+          <li class="q-item"><span class="q-diff easy">E</span><div><div class="q-name">Reverse Linked List</div><div class="q-pattern">Pattern: prev/curr/next triple</div></div></li>
+          <li class="q-item"><span class="q-diff easy">E</span><div><div class="q-name">Linked List Cycle</div><div class="q-pattern">Pattern: fast/slow pointers</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Merge Two Sorted Lists</div><div class="q-pattern">Pattern: dummy node merge</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Reorder List</div><div class="q-pattern">Pattern: find mid + reverse + merge</div></div></li>
+          <li class="q-item"><span class="q-diff hard">H</span><div><div class="q-name">Merge K Sorted Lists</div><div class="q-pattern">Pattern: min-heap of heads</div></div></li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-card-header">
+          <span class="pattern-badge" style="background:#E1F5EE; color:#0F6E56;">Intervals + Greedy</span>
+        </div>
+        <div class="topic-title" style="margin-bottom:10px;">Days 27–28</div>
+        <ul class="q-list">
+          <li class="q-item"><span class="q-diff easy">E</span><div><div class="q-name">Meeting Rooms</div><div class="q-pattern">Pattern: sort + overlap check</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Merge Intervals</div><div class="q-pattern">Pattern: sort + extend end</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Non-overlapping Intervals</div><div class="q-pattern">Pattern: sort by end + greedy</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Jump Game</div><div class="q-pattern">Pattern: max reach greedy</div></div></li>
+          <li class="q-item"><span class="q-diff hard">H</span><div><div class="q-name">Meeting Rooms II</div><div class="q-pattern">Pattern: min-heap of end times</div></div></li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-card-header">
+          <span class="pattern-badge" style="background:#FAEEDA; color:#854F0B;">Trie + Union-Find</span>
+        </div>
+        <div class="topic-title" style="margin-bottom:10px;">Day 29</div>
+        <ul class="q-list">
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Implement Trie</div><div class="q-pattern">Pattern: 26-child node</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Word Search II</div><div class="q-pattern">Pattern: Trie + DFS backtrack</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Number of Provinces</div><div class="q-pattern">Pattern: Union-Find (find+union)</div></div></li>
+          <li class="q-item"><span class="q-diff hard">H</span><div><div class="q-name">Redundant Connection</div><div class="q-pattern">Pattern: cycle detect with UF</div></div></li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-card-header">
+          <span class="pattern-badge" style="background:#FCEBEB; color:#A32D2D;">Mock Day</span>
+        </div>
+        <div class="topic-title" style="margin-bottom:10px;">Day 30</div>
+        <ul class="q-list">
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">LRU Cache</div><div class="q-pattern">Pattern: doubly-linked + hashmap</div></div></li>
+          <li class="q-item"><span class="q-diff med">M</span><div><div class="q-name">Design Add and Search Words</div><div class="q-pattern">Pattern: Trie + wildcard DFS</div></div></li>
+          <li class="q-item"><span class="q-diff hard">H</span><div><div class="q-name">Serialize & Deserialize BTree</div><div class="q-pattern">Pattern: BFS encode/decode</div></div></li>
+        </ul>
+        <div style="margin-top:10px; font-size:13px; color:var(--color-text-secondary);">Simulate 45-min timed interviews. Say your pattern out loud before coding.</div>
+      </div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-label">Phase tip</div>
+      <p>On mock day, grade yourself on: (1) pattern identified in under 2 min, (2) correct solution, (3) edge cases called out, (4) complexity stated. All four matter in real interviews.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function show(id, btn) {
+  document.querySelectorAll('.phase-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
