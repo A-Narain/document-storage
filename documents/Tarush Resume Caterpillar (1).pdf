@@ -1,0 +1,68 @@
+Tarush Agarwal
+tarushagarwal2003@gmail.com 2
++91-8630632030
+github.com/tarush10000 2
+linkedin.com/in/tarush10000 2
+Personal Portfolio Website: bit.ly/tarushagarwal 2
+Education
+Vellore Institute of Technology
+B.Tech. in Computer Science Engineering
+Sep’22 – Jun’26
+CGPA: 9.25
+K.L. International School, Meerut
+CBSE Class 10th & 12th Board
+2020 – 2022
+Percentage: 98 & 93.6
+Experience
+Software Developer Intern at Sooru.AI
+May’25 – Present
+Built an AI-powered 2D/3D floor plan editor with React, TypeScript, SVG, ThreeJS, Babylon.js, Framer Motion, featuring
+real-time BIM editing, geometry tools, and export to PNG, PDF, and GLB.
+Frontend Developer Intern at Valsco Technology
+Certificate 2 Apr’24 – Jun’24
+Spearheaded the Next.js and Tailwind-based front-end of a real-time alumni chat system, reducing load times by 25% and
+integrating to boost engagement by 30%.
+Certifications & Achievements
+AWS Certified Solutions Architect – Associate & Cloud Practitioner
+Demonstrated ability to design and deploy scalable, highly available, fault-tolerant systems on AWS with
+strong cost optimization and security best practices.
+Cert-1 2 Cert-2 2
+Oracle Cloud Infrastructure 2024 Generative AI Certified Professional
+Scored in the top 10 percentile globally; demonstrated expertise in deploying LLMs, designing RAG
+pipelines, and building AI applications using Oracle Cloud tools.
+Certificate 2
+Skills
+Languages: Python, C, C++, Java, JavaScript, TypeScript, Dart
+Frameworks & Libraries: React, Django, Flask, Next.js, Node.js, Express, Tailwind CSS, Bootstrap, PyQt6, ThreeJS,
+BabylonJS
+APIs & Tools: OpenWeatherMap, WAQI, Geoapify, Sentinel Hub, Google Gemini
+Cloud & DevOps: AWS (EC2, S3, IAM, RDS, CloudWatch, Lambda), Docker, Git, GitHub, Postman, Vercel
+Database & Storage: MySQL, MongoDB, SQLite, ChromaDB
+Positions of Responsibility
+Chairperson — IEEE TEMS VIT
+Led a 30+ member core team to organize 15+ technical events, workshops, and hackathons, impacting
+over 2500 students across India.
+Jan 2025 – Present
+Cisco Campus Ambassador Cert 2
+Oct’24 - Present
+Projects
+LeetFriends
+GitHub 2 — Demo 2
+Built a multiplayer LeetCode-style platform with real-time contests, AI-generated problems via Gemini API, voice-based
+interviews, and live leaderboards using Next.js 15, TypeScript, MongoDB, Tailwind, and Razorpay.
+SatIndustry
+GitHub 2
+Developed an AI-powered air pollution dashboard using satellite data with LSTM, Random Forest, and K-Means for
+forecasting and anomaly detection, built with Django, TensorFlow, scikit-learn, and Sentinel Hub.
+InstructAI
+GitHub 2
+Built an AI-powered learning platform with interactive video creation, AI-generated notes, adaptive quizzes, progress
+tracking, and mock interviews using Django, Python, JavaScript, and Gemini API.
+Doccy
+GitHub 2
+Built a document chatbot with PyQt6 that extracts text from PDFs, DOCX, and PPTX files, generates embeddings with
+SentenceTransformers + ChromaDB, and answers queries with Google Generative AI and text-to-speech
+ProDev.AI
+GitHub 2
+Built a desktop assistant with RAG-based Gemini 1.5 Pro integration to generate structured dev plans and code from user
+prompts using Python, PyQt5, sentence-transformers, and chromadb.
